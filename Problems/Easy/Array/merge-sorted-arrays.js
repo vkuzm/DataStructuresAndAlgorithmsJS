@@ -9,8 +9,8 @@
 //[0,3,4,4,6,30,31];
 
 console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
-console.log(mergeSortedArrays([11, 4, 6, 66], [1, 16, 33]));
-console.log(mergeSortedArrays2([0, 3, 4, 31], [4, 6, 30]));
+console.log(mergeSortedArrays2([11, 4, 6, 66], [1, 16, 33]));
+console.log(mergeSortedArrays3([0, 3, 4, 31], [4, 6, 30]));
 
 // Time Complexity = O(n)
 // Space Complexity = O(n)

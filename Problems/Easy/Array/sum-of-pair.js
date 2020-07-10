@@ -4,17 +4,10 @@
 // Input 2: [1, 2, 4, 4] = true
 // Output: true or false
 
-// Do we need improve time or space complexity?: Space
 
-// Solution: Brute force
+// Solution #1: Brute force
 // Time Complexity = O(n^2)
 // Space Complexity = O(1)
-
-const array1 = [1, 2, 3, 9];
-const array2 =  [1, 2, 4, 4];
-
-console.log(findSumOfPair(array2, 8));
-
 function findSumOfPair(data, sum) {
   if (data.length < 2) {
     return false;
@@ -30,3 +23,24 @@ function findSumOfPair(data, sum) {
   }
   return false;
 }
+console.log(findSumOfPair([1, 2, 4, 4], 8));
+
+
+// Solution #2: Best
+// Time Complexity = O(n)
+// Space Complexity = O(n)
+function findSumOfPair(data, sum) {
+  if (data.length < 2) {
+    return false;
+  }
+
+  const comp = new Set();
+  for (let value of data) {
+    if (comp.has(value)) {
+      return true;
+    }
+    comp.add(sum - value);
+  }
+  return false;
+}
+console.log(findSumOfPair([1, 2, 4, 4], 8));

@@ -11,22 +11,11 @@
 
 console.log(firstRecurringCharacter([2,5,1,2,3,5,1,2,4]));
 console.log(firstRecurringCharacter([2,1,1,2,3,5,1,2,4]));
-console.log(firstRecurringCharacter([2,3,4,5]));
-console.log(firstRecurringCharacter([2,5,5,2,3,5,1,2,4]));
+console.log(firstRecurringCharacter3([2,3,4,5]));
+console.log(firstRecurringCharacter3([2,5,5,2,3,5,1,2,4]));
 
-// Time Complexity = O(n)
-// Space Complexity = O(n)
-function firstRecurringCharacter3(input) {
-  const set = new Set();
-  for (let i = 0; i < input.length; i++) {
-    if (set.has(input[i])) {
-      return input[i];
-    }
-    set.add(input[i]);
-  }
-  return undefined;
-}
 
+// Solution #1 Brute Force
 // Time Complexity = O(n^2)
 // Space Complexity = O(n)
 function firstRecurringCharacter(input) {
@@ -47,6 +36,20 @@ function firstRecurringCharacter(input) {
     }
   }
   return recurringCharacter;
+}
+
+// Solution #2 Best
+// Time Complexity = O(n)
+// Space Complexity = O(n)
+function firstRecurringCharacter3(input) {
+  const set = new Set();
+  for (let i = 0; i < input.length; i++) {
+    if (set.has(input[i])) {
+      return input[i];
+    }
+    set.add(input[i]);
+  }
+  return undefined;
 }
 
 //Bonus... What if we had this:
