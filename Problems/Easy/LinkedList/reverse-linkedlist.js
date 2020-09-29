@@ -28,7 +28,27 @@ class LinkedList {
     return array;
   }
 
+  // Time: O(n)
+  // Space: O(1)
   reverse() {
+    const head = this.head;
+    if (head === null) return null;
+
+    let prev = null;
+    let curr = head;
+
+    while(curr !== null) {
+      const nextTemp = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = nextTemp;
+    }
+    return prev;
+  }
+
+  // Time: O(n)
+  // Space: O(1)
+  reverse2() {
     if (!this.head.next) {
       return this.head;
     }
@@ -47,10 +67,12 @@ class LinkedList {
 }
 
 const myLinkedList = new LinkedList(1);
-myLinkedList.append(10);
-myLinkedList.append(16);
-myLinkedList.append(88);
+myLinkedList.append(2);
+myLinkedList.append(3);
+myLinkedList.append(4);
+myLinkedList.append(5);
 console.log(myLinkedList.printList());
 
 myLinkedList.reverse();
+//myLinkedList.reverse2();
 console.log(myLinkedList.printList());
