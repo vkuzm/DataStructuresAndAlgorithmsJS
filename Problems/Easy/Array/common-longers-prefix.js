@@ -1,6 +1,6 @@
 
-// Time Complexity: O(n)
-// Space Complexity O(1)
+// Time : O(S) -  where S is the sum of all characters in all strings.
+// Space: O(n)
 const commonLongestPrefix = function(words) {
   if (words.length === 0) {
     return '';
